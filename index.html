@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Avouta's Salon</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick-theme.css"/>
+    <script src="jquery.js"></script>
+    <script src="slick.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <section class="logo-img">
+        <img id="company-name" onclick="returnToOriginal()" src="assets/clogo2.png" alt="image placeholder">
+    </section>
+
+    <nav id="menu" class="horizontal-menu">
+        <ul>
+            <li><a href="#" onclick="transitionLayout('About')">About</a></li>
+            <li><a href="#" onclick="transitionLayout('Gallery')">Gallery</a></li>
+            <li><a href="#" onclick="transitionLayout('Services')">Services</a></li>
+            <li><a href="#" onclick="transitionLayout('Schedule')">Schedule</a></li>
+            <li><a href="#" onclick="transitionLayout('Contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="about-page" class="about-page">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="assets/avouta.jpg" alt="Image 1">
+        </div>
+        <div class="about-text">
+          <h2>About Avouta's Salon</h2>
+          <p>
+            Yvette - nicknamed Avouta - is a friends and family hairdresser with over 20 years of experience. She's been gifting her clients with a smile every time they get off the chair. Avouta is experienced not only with women but with men as well, making it a welcoming opportunity for all! From infants to seniors, everyone is welcome.
+          </p>
+          <p>
+            Located in the <a href="#"  onclick="transitionLayout('Contact')">Scarborough area</a>, her salon creates a home-like atmosphere. Complemented with top-of-the-line tools, you can rest assured that her priority is your comfort.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="gallery-page" class="gallery-page">
+      <div class="gallery-container">
+        <div class="gallery">
+          <img src="assets/img1.jpg" alt="Image 1">
+          <img src="assets/img2.jpg" alt="Image 2">
+          <img src="assets/img3.jpg" alt="Image 3">
+          <img src="assets/img4.jpg" alt="Image 4">
+          <img src="assets/img5.jpg" alt="Image 5">
+        </div>
+      </div>
+      <div class="arrows">
+        <div class="arrow-left">&lt;</div>
+        <div class="arrow-right">&gt;</div>
+      </div>
+    </div> 
+    <div id="service-page" class="service-page">
+        <div class="services">
+            <ul>
+              <li><a href="#" onclick="transitionLayout2('Children')" data-service="Children">CHILDREN</a></li>
+              <li><a href="#" onclick="transitionLayout2('Men')" data-service="Men">MEN</a></li>
+              <li><a href="#" onclick="transitionLayout2('Women')" data-service="Women">WOMEN</a></li>
+            </ul>
+          </div>
+           
+          <div id="children-page" class="children-page">            
+            <div class="service-card">
+              <div class="service-content">
+                <h3>Baby Cut</h3>
+                <p class="service-price">$27</p>
+                <p class="service-description">Includes KidsCut with certificate of completion, along with a photo and lock of hair. Make the first experience memorable and easy.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-content">
+                <h3>Kidscut</h3>
+                <p class="service-price">$23.95</p>
+                <p class="service-description">Our signature service guided by our stylists will ensure we deliver exactly what you ask for.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-content">
+                <h3>Kidscut with shampoo</h3>
+                <p class="service-price">$28.95</p>
+                <p class="service-description">Don't stop with just a cut. Groom your kids for a lifetime of great haircuts with our full service.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-content">
+                <h3>Teen cut</h3>
+                <p class="service-price">$25.95</p>
+                <p class="service-description">Keep it cool, hip, messy, or styled just the way they like it. Build their self-esteem and claim the identity they crave.</p>
+              </div>
+            </div>
+
+          </div>
+          
+        <div id="men-page" class="men-page">
+            <div class="service-card">
+                <div class="service-content">
+                  <h3>Classic Cut</h3>
+                  <p class="service-price">$30</p>
+                  <p class="service-description">Full hair cut for those who haven't cut in weeks/months</p>
+                </div>
+              </div>
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Maintenance Cut</h3>
+                  <p class="service-price">$15</p>
+                  <p class="service-description">30min hair cut providing a quick clean up</p>
+                </div>
+              </div>
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Beard Shaving</h3>
+                  <p class="service-price">$20</p>
+                  <p class="service-description">Say goodbye to the crumb collector</p>
+                </div>
+              </div>
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Beard Shaping</h3>
+                  <p class="service-price">$22</p>
+                  <p class="service-description">Clean the neck and level the size</p>
+                </div>
+              </div>
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Hair Dye</h3>
+                  <p class="service-price">$40</p>
+                  <p class="service-description">Color touch your hair or beard</p>
+                </div>
+              </div>
+        </div>   
+        <div id="women-page" class="women-page">
+            <div class="service-card">
+                <div class="service-content">
+                  <h3>Cutting Services</h3>
+                  <p class="service-price">$65</p>
+                  <p class="service-description">Cut and shape to your liking</p>
+                </div>
+              </div>
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Colouring Services</h3>
+                  <p class="service-price">$75-90</p>
+                  <p class="service-description">price varies depending on colour and coverage</p>
+                </div>
+              </div>
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Balayage</h3>
+                  <p class="service-price">$200</p>
+                  <p class="service-description">above shoulder length</p>
+                </div>
+              </div>
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Perms</h3>
+                  <p class="service-price">$100</p>
+                  <p class="service-description">Need new hair, we got you covered ;)</p>
+                </div>
+              </div>
+        </div>       
+    </div>
+    <div id="schedule-page" class="schedule-page">
+        <div class="form-step" id="step1">
+            <h2>Step 1: Personal Information</h2>
+            <form id="appointment-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <button type="button" id="step1-continue">Continue</button>
+            </form>
+        </div>
+        <div class="form-step" id="step2">
+            <h2>Step 2: Select Service and Date</h2>
+            <form id="service-date-form">
+                <label for="service">Select a service:</label>
+                <select id="service" name="service" required>
+                    <option value="">-- Select a service --</option>
+                    <option value="Haircut">Haircut</option>
+                    <option value="Coloring">Coloring</option>
+                    <option value="Styling">Styling</option>
+                </select>
+                <label for="date">Select a date:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="button" id="step2-continue">Continue</button>
+            </form>
+        </div>
+        <div class="form-step" id="step3">
+            <h2>Step 3: Payment</h2>
+            <form id="payment-form">
+              <h3>Payment Details</h3>
+              <label for="card-number">Card Number:</label>
+              <input type="text" id="card-number" name="card-number" required>
+              <label for="expiration">Expiration Date:</label>
+              <input type="text" id="expiration" name="expiration" required>
+              <label for="cvv">CVV:</label>
+              <input type="text" id="cvv" name="cvv" required>
+              <button type="button" id="step3-continue">Continue</button>
+            </form>
+        </div>
+        <div id="confirmation-message" class="confirmation">
+          <h2>Booking Confirmation</h2>
+          <p>Your appointment has been successfully booked. We look forward to seeing you!</p>
+          <button id="book-again" onclick="perviouStep()">Book Again</button>
+      </div>
+        <div class="step-indicator">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div id="contact-page" class="contact-page">
+        <div class="contact-container">
+          <div class="contact-column">
+            <div class="social-links">
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img src="assets/twitter.png" alt="Twitter"></a>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="assets/facebook.png" alt="Facebook"></a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="assets/instagram.png" alt="Instagram"></a>
+            </div>
+          </div>
+          <div class="contact-column">
+            <table>
+              <tr>
+                <th>Phone:</th>
+                <td>416-400-0000</td>
+              </tr>
+              <tr>
+                <th>Email:</th>
+                <td><a href="mailto:avouta@example.com">avouta@example.com</a></td>
+              </tr>
+              <tr>
+                <th>Address:</th>
+                <td>Toronto, ON, A1A1A1</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
