@@ -12,7 +12,7 @@ body {
     align-items: center;
     flex-direction:column;
     justify-content: center;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .logo-img {
@@ -273,7 +273,7 @@ body {
   }
   
   .gallery-container {
-    width: 50%;
+    width: 40%;
     height: 80%;
     scrollbar-width: none;
     -ms-overflow-style: none; 
