@@ -207,6 +207,26 @@
     .carousel-item img {
     max-width: 50%;
     }
+
+    /* booking */
+
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .step-indicator span {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+    }
+
+    .step-indicator span.active {
+      background-color: #007bff;
+    }
     
   </style>
 </head>
@@ -260,7 +280,6 @@
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
@@ -270,9 +289,6 @@
           </div>
           <div class="carousel-item">
             <img src="assets/img2.jpg" class="d-block w-100 mx-auto" alt="Image 2">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img3.jpg" class="d-block w-100 mx-auto" alt="Image 3">
           </div>
           <div class="carousel-item">
             <img src="assets/img4.jpg" class="d-block w-100 mx-auto" alt="Image 4">
@@ -393,53 +409,114 @@
       </div>
       
 
-    <div id="book" class="page-container">
+      <div id="book" class="page-container">
         <div id="step1" class="step">
-            <h2>Step 1: Personal Information</h2>
-            <form id="step1-form">
-              <label for="name">Name:</label>
-              <input type="text" id="name" required><br><br>
+          <h2>Step 1: Personal Information</h2>
+          <form id="step1-form">
+            <div class="row">
+              <div class="col">
+                <div class="p-3"><label for="name">Name:</label></div>
+              </div>
+              <div class="col">
+                <div class="p-3"><input type="text" id="name" placeholder="Enter your name" required><br><br></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="p-3"><label for="phone">Phone Number:</label></div>
+              </div>
+              <div class="col">
+                <div class="p-3"><input type="text" id="phone" placeholder="Enter your phone number" required><br><br></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="p-3"><label for="email">Email:</label></div>
+              </div>
+              <div class="col">
+                <div class="p-3"><input type="email" id="email" placeholder="Enter your email" required><br><br></div>
+              </div>
+            </div>
+            <button type="button" onclick="validateStep1()">Continue</button>
+          </form>
+        </div>
         
-              <label for="phone">Phone Number:</label>
-              <input type="text" id="phone" required><br><br>
-        
-              <label for="email">Email:</label>
-              <input type="email" id="email" required><br><br>
-        
-              <button type="button" onclick="nextStep()">Continue</button>
-            </form>
-          </div>
-        
-          <div id="step2" class="step" style="display: none;">
-            <h2>Step 2: Service Requested</h2>
-            <form id="step2-form">
-              <label for="service">Service Requested:</label>
-              <input type="text" id="service" required><br><br>
-        
-              <button type="button" onclick="nextStep()">Continue</button>
-            </form>
-          </div>
+        <div id="step2" class="step" style="display: none;">
+          <h2>Step 2: Service Requested</h2>
+          <form id="step2-form">
+            <div class="row">
+              <div class="col">
+                <div class="p-3"><label for="service">Service Requested:</label></div>
+              </div>
+              <div class="col">
+                <div class="p-3">
+                  <select id="service-dropdown">
+                    <option value="service1">Baby Cut</option>
+                    <option value="service2">Kidscut</option>
+                    <option value="service3">Kidscut with shampoo</option>
+                    <option value="service4">Bangs trim</option>
+                    <option value="service5">Men's Haircut</option>
+                    <option value="service6">Beard trim</option>
+                    <option value="service7">Women's Haircut</option>
+                    <option value="service8">Hair Colouring</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="p-3"><label for="date-picker">Select a date:</label></div>
+              </div>
+              <div class="col">
+                <div class="p-3"><input type="date" id="date-picker"></div>
+              </div>
+            </div>
+            <button type="button" onclick="validateStep2()">Continue</button>
+          </form>
+        </div>
         
           <div id="step3" class="step" style="display: none;">
             <h2>Step 3: Credit Card Information</h2>
             <form id="step3-form">
-              <label for="card">Credit Card Number:</label>
-              <input type="text" id="card" required><br><br>
+              <div class="row ">
+                <div class="col">
+                  <div class="p-3"><label for="card">Credit Card Number:</label></div>
+                </div>
+                <div class="col">
+                  <div class="p-3"><input type="text" id="card" required><br><br></div>
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col">
+                  <div class="p-3"><label for="expiry">Expiry Date:</label></div>
+                </div>
+                <div class="col">
+                  <div class="p-3"><input type="text" id="expiry" required><br><br></div>
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col">
+                  <div class="p-3"><label for="cvv">CVV:</label></div>
+                </div>
+                <div class="col">
+                  <div class="p-3"><input type="text" id="cvv" required><br><br></div>
+                </div>
+              </div>
         
-              <label for="expiry">Expiry Date:</label>
-              <input type="text" id="expiry" required><br><br>
-        
-              <label for="cvv">CVV:</label>
-              <input type="text" id="cvv" required><br><br>
-        
-              <button type="button" onclick="confirmBooking()">Confirm</button>
+              <button type="button" onclick="validateStep3()">Confirm</button>
             </form>
           </div>
         
           <div id="confirmation" class="step" style="display: none;">
             <h2>Confirmation</h2>
-            <p id="confirmation-message"></p>
+            <p id="confirmation-message"> You're booking has successfully been registered :) You will receive a confirmation via email shortly!</p>
             <button onclick="location.reload()">Back to Home</button>
+          </div>
+
+          <div class="step-indicator">
+            <span id="step1-indicator"></span>
+            <span id="step2-indicator"></span>
+            <span id="step3-indicator"></span>
           </div>
     </div>
 
@@ -526,35 +603,87 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-let currentStep = 1;
+document.addEventListener('DOMContentLoaded', function() {
+      const step1Form = document.getElementById('step1-form');
+      const step2Form = document.getElementById('step2-form');
 
-    function nextStep() {
-      if (currentStep === 1) {
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const email = document.getElementById('email').value;
+      step1Form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        showStep2();
+      });
 
-        document.getElementById('step1').style.display = 'none';
-        document.getElementById('step2').style.display = 'block';
-        currentStep = 2;
-      } else if (currentStep === 2) {
-        const service = document.getElementById('service').value;
-        document.getElementById('step2').style.display = 'none';
-        document.getElementById('step3').style.display = 'block';
-        currentStep = 3;
+      step2Form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        showStep3();
+      });
+    });
+
+    function showStep2() {
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+      document.getElementById('step1-indicator').classList.remove('active');
+      document.getElementById('step2-indicator').classList.add('active');
+    }
+
+    function showStep3() {
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('step3').style.display = 'block';
+      document.getElementById('step2-indicator').classList.remove('active');
+      document.getElementById('step3-indicator').classList.add('active');
+    }
+
+    function showConfirmation() {
+      document.getElementById('step3').style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+      document.getElementById('step3-indicator').classList.remove('active');
+    }
+
+    function validateStep1() {
+      // Validate Step 1 form
+      var step1Form = document.getElementById('step1-form');
+      if (step1Form.checkValidity()) {
+        showStep2();
+      } else {
+        step1Form.reportValidity();
       }
     }
 
-    function confirmBooking() {
-      const card = document.getElementById('card').value;
-      const expiry = document.getElementById('expiry').value;
-      const cvv = document.getElementById('cvv').value;
-      document.getElementById('step3').style.display = 'none';
-      document.getElementById('confirmation').style.display = 'block';
-      document.getElementById('confirmation-message').innerText = 'Your appointment has been booked.';
+    function validateStep2() {
+      // Validate Step 2 form
+      var step2Form = document.getElementById('step2-form');
+      var dateInput = document.getElementById('date');
 
-      currentStep = 4;
+      if (step2Form.checkValidity()) {
+        showStep3();
+      } else {
+        step2Form.reportValidity();
+      }
     }
+
+    function validateStep3() {
+      // Validate Step 3 form
+      var step3Form = document.getElementById('step3-form');
+      if (step3Form.checkValidity()) {
+        showConfirmation();
+      } else {
+        step3Form.reportValidity();
+      }
+    }
+
+    document.getElementById('step1-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      validateStep1();
+    });
+
+    document.getElementById('step2-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      validateStep2();
+    });
+
+    document.getElementById('step3-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      validateStep3();
+    });
   </script>
 </body>
 
