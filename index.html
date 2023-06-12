@@ -1,34 +1,247 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Avouta's Salon</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick-theme.css"/>
-    <script src="jquery.js"></script>
-    <script src="slick.js"></script>
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap HTML File</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    @font-face {
+      font-family: GreatVibes;
+      src: url(assets/Great_Vibes/GreatVibes-Regular.ttf);
+    }
+
+    body {
+      background-color: #f8d7da;
+    }
+
+    .header-container {
+      background-color: #f8d7da;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header-logo {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+      height: auto;
+    }
+
+    .header-menu {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-menu .nav-link {
+      color: black;
+      font-size: 2rem;
+      font-family: GreatVibes;
+    }
+
+    .header-menu .nav-link:hover {
+      color: #ffffff;
+      text-decoration: overline;
+    }
+
+    .header-menu .nav-link.active {
+      text-decoration: overline;
+    }
+
+    .container {
+      margin-top: 20px;
+    }
+
+    .page-container {
+      display: none;
+      padding: 20px;
+    }
+
+    /* about page */
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .about-image {
+      margin-bottom: 20px;
+    }
+
+    .about-image img {
+      width: 25rem;
+      border-radius: 50%;
+    }
+
+    .about-text {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about-text h2 {
+      margin-bottom: 10px;
+    }
+
+    .about-text p {
+      line-height: 1.6;
+    }
+
+    /* contact page */
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .contact-column {
+      flex: 1 1 50%;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .social-links {
+      margin-bottom: 20px;
+    }
+
+    .social-links img {
+      width: 30px;
+      margin: 0 10px;
+    }
+
+    table {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    th {
+      padding-right: 10px;
+      font-weight: bold;
+    }
+
+    td {
+      padding-left: 10px;
+    }
+    
+    /* Sub-menu styles */
+    .sub-menu-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .sub-menu {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .sub-menu .sub-menu-item {
+      list-style: none;
+      margin: 0 10px;
+    }
+    
+    .sub-menu .sub-menu-link {
+      color: black;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    
+    .sub-menu .sub-menu-link.active {
+      text-decoration: overline;
+    }
+
+    /* service cards */
+    .service-card {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      margin-bottom: 20px;
+    }
+
+    .service-card .service-price {
+      font-weight: bold;
+    }
+
+    /* sub-menu */
+    .sub-menu-container {
+      margin-bottom: 20px;
+    }
+
+    .sub-menu {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+    }
+
+    .sub-menu-item {
+      margin: 0 10px;
+    }
+
+    .sub-menu-link {
+      color: black;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .sub-menu-link.active {
+      text-decoration: overline;
+    }
+
+    /* Gallery */
+    .carousel-item img {
+    max-width: 50%;
+    }
+    
+  </style>
 </head>
+
 <body>
-
-    <section class="logo-img">
-        <img id="company-name" onclick="returnToOriginal()" src="assets/clogo2.png" alt="image placeholder">
-    </section>
-
-    <nav id="menu" class="horizontal-menu">
-        <ul>
-            <li><a href="#" onclick="transitionLayout('About')">About</a></li>
-            <li><a href="#" onclick="transitionLayout('Gallery')">Gallery</a></li>
-            <li><a href="#" onclick="transitionLayout('Services')">Services</a></li>
-            <li><a href="#" onclick="transitionLayout('Schedule')">Schedule</a></li>
-            <li><a href="#" onclick="transitionLayout('Contact')">Contact</a></li>
+  <header>
+    <div class="header-container">
+      <img src="assets/clogo2.png" alt="Company Logo" class="header-logo">
+      <nav class="header-menu">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#book">Book</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
         </ul>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <div id="about-page" class="about-page">
+  <div class="container">
+    <div id="about" class="page-container">
       <div class="about-content">
         <div class="about-image">
-          <img src="assets/avouta.jpg" alt="Image 1">
+          <img src="assets/avouta.jpg" alt="Avouta's Salon">
         </div>
         <div class="about-text">
           <h2>About Avouta's Salon</h2>
@@ -36,220 +249,313 @@
             Yvette - nicknamed Avouta - is a friends and family hairdresser with over 20 years of experience. She's been gifting her clients with a smile every time they get off the chair. Avouta is experienced not only with women but with men as well, making it a welcoming opportunity for all! From infants to seniors, everyone is welcome.
           </p>
           <p>
-            Located in the <a href="#"  onclick="transitionLayout('Contact')">Scarborough area</a>, her salon creates a home-like atmosphere. Complemented with top-of-the-line tools, you can rest assured that her priority is your comfort.
+            Located in the <a href="#contact">Scarborough area</a>, her salon creates a home-like atmosphere. Complemented with top-of-the-line tools, you can rest assured that her priority is your comfort.
           </p>
         </div>
       </div>
     </div>
-    <div id="gallery-page" class="gallery-page">
-      <div class="gallery-container">
-        <div class="gallery">
-          <img src="assets/img1.jpg" alt="Image 1">
-          <img src="assets/img2.jpg" alt="Image 2">
-          <img src="assets/img3.jpg" alt="Image 3">
-          <img src="assets/img4.jpg" alt="Image 4">
-          <img src="assets/img5.jpg" alt="Image 5">
-        </div>
-      </div>
-      <div class="arrows">
-        <div class="arrow-left">&lt;</div>
-        <div class="arrow-right">&gt;</div>
-      </div>
-    </div> 
-    <div id="service-page" class="service-page">
-        <div class="services">
-            <ul>
-              <li><a href="#" onclick="transitionLayout2('Children')" data-service="Children">CHILDREN</a></li>
-              <li><a href="#" onclick="transitionLayout2('Men')" data-service="Men">MEN</a></li>
-              <li><a href="#" onclick="transitionLayout2('Women')" data-service="Women">WOMEN</a></li>
-            </ul>
-          </div>
-           
-          <div id="children-page" class="children-page">            
-            <div class="service-card">
-              <div class="service-content">
-                <h3>Baby Cut</h3>
-                <p class="service-price">$27</p>
-                <p class="service-description">Includes KidsCut with certificate of completion, along with a photo and lock of hair. Make the first experience memorable and easy.</p>
-              </div>
-            </div>
-            <div class="service-card">
-              <div class="service-content">
-                <h3>Kidscut</h3>
-                <p class="service-price">$23.95</p>
-                <p class="service-description">Our signature service guided by our stylists will ensure we deliver exactly what you ask for.</p>
-              </div>
-            </div>
-            <div class="service-card">
-              <div class="service-content">
-                <h3>Kidscut with shampoo</h3>
-                <p class="service-price">$28.95</p>
-                <p class="service-description">Don't stop with just a cut. Groom your kids for a lifetime of great haircuts with our full service.</p>
-              </div>
-            </div>
-            <div class="service-card">
-              <div class="service-content">
-                <h3>Teen cut</h3>
-                <p class="service-price">$25.95</p>
-                <p class="service-description">Keep it cool, hip, messy, or styled just the way they like it. Build their self-esteem and claim the identity they crave.</p>
-              </div>
-            </div>
 
+    <div id="gallery" class="page-container">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img1.jpg" class="d-block w-100 mx-auto" alt="Image 1">
           </div>
-          
-        <div id="men-page" class="men-page">
-            <div class="service-card">
+          <div class="carousel-item">
+            <img src="assets/img2.jpg" class="d-block w-100 mx-auto" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img3.jpg" class="d-block w-100 mx-auto" alt="Image 3">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img4.jpg" class="d-block w-100 mx-auto" alt="Image 4">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img5.jpg" class="d-block w-100 mx-auto" alt="Image 5">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="services" class="page-container">
+        <div class="sub-menu-container">
+          <ul class="sub-menu">
+            <li class="sub-menu-item">
+              <a class="sub-menu-link active" href="#children-services">Children</a>
+            </li>
+            <li class="sub-menu-item">
+              <a class="sub-menu-link" href="#men-services">Men</a>
+            </li>
+            <li class="sub-menu-item">
+              <a class="sub-menu-link" href="#women-services">Women</a>
+            </li>
+          </ul>
+        </div>
+        <div id="children-services" class="service-page" style="display: none;">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="service-card">
                 <div class="service-content">
-                  <h3>Classic Cut</h3>
+                  <h3>Baby Cut</h3>
+                  <p class="service-price">$27</p>
+                  <p class="service-description">Includes KidsCut with certificate of completion, along with a photo and lock of hair. Make the first experience memorable and easy.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Kidscut</h3>
+                  <p class="service-price">$23.95</p>
+                  <p class="service-description">Our signature service guided by our stylists will ensure we deliver exactly what you ask for.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Kidscut with shampoo</h3>
+                  <p class="service-price">$29.95</p>
+                  <p class="service-description">Add a shampoo to make this kid's cut complete with a rinse and fluff dry.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Bangs trim</h3>
+                  <p class="service-price">$10</p>
+                  <p class="service-description">Just need the bangs trimmed? This is the service for you.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="men-services" class="service-page" style="display: none;">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="service-card">
+                <div class="service-content">
+                  <h3>Men's Haircut</h3>
                   <p class="service-price">$30</p>
-                  <p class="service-description">Full hair cut for those who haven't cut in weeks/months</p>
+                  <p class="service-description">Get a fresh and stylish haircut designed just for men.</p>
                 </div>
               </div>
+            </div>
+            <div class="col-md-6">
               <div class="service-card">
                 <div class="service-content">
-                  <h3>Maintenance Cut</h3>
+                  <h3>Beard Trim</h3>
                   <p class="service-price">$15</p>
-                  <p class="service-description">30min hair cut providing a quick clean up</p>
+                  <p class="service-description">Keep your beard in shape with a professional trim.</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div id="women-services" class="service-page" style="display: none;">
+          <div class="row">
+            <div class="col-md-6">
               <div class="service-card">
                 <div class="service-content">
-                  <h3>Beard Shaving</h3>
-                  <p class="service-price">$20</p>
-                  <p class="service-description">Say goodbye to the crumb collector</p>
+                  <h3>Women's Haircut</h3>
+                  <p class="service-price">$45</p>
+                  <p class="service-description">Get a stylish and trendy haircut tailored to your preferences.</p>
                 </div>
               </div>
+            </div>
+            <div class="col-md-6">
               <div class="service-card">
                 <div class="service-content">
-                  <h3>Beard Shaping</h3>
-                  <p class="service-price">$22</p>
-                  <p class="service-description">Clean the neck and level the size</p>
+                  <h3>Hair Coloring</h3>
+                  <p class="service-price">$80</p>
+                  <p class="service-description">Transform your hair with a beautiful and vibrant color.</p>
                 </div>
               </div>
-              <div class="service-card">
-                <div class="service-content">
-                  <h3>Hair Dye</h3>
-                  <p class="service-price">$40</p>
-                  <p class="service-description">Color touch your hair or beard</p>
-                </div>
-              </div>
-        </div>   
-        <div id="women-page" class="women-page">
-            <div class="service-card">
-                <div class="service-content">
-                  <h3>Cutting Services</h3>
-                  <p class="service-price">$65</p>
-                  <p class="service-description">Cut and shape to your liking</p>
-                </div>
-              </div>
-              <div class="service-card">
-                <div class="service-content">
-                  <h3>Colouring Services</h3>
-                  <p class="service-price">$75-90</p>
-                  <p class="service-description">price varies depending on colour and coverage</p>
-                </div>
-              </div>
-              <div class="service-card">
-                <div class="service-content">
-                  <h3>Balayage</h3>
-                  <p class="service-price">$200</p>
-                  <p class="service-description">above shoulder length</p>
-                </div>
-              </div>
-              <div class="service-card">
-                <div class="service-content">
-                  <h3>Perms</h3>
-                  <p class="service-price">$100</p>
-                  <p class="service-description">Need new hair, we got you covered ;)</p>
-                </div>
-              </div>
-        </div>       
-    </div>
-    <div id="schedule-page" class="schedule-page">
-        <div class="form-step" id="step1">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    <div id="book" class="page-container">
+        <div id="step1" class="step">
             <h2>Step 1: Personal Information</h2>
-            <form id="appointment-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-                <button type="button" id="step1-continue">Continue</button>
+            <form id="step1-form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" required><br><br>
+        
+              <label for="phone">Phone Number:</label>
+              <input type="text" id="phone" required><br><br>
+        
+              <label for="email">Email:</label>
+              <input type="email" id="email" required><br><br>
+        
+              <button type="button" onclick="nextStep()">Continue</button>
             </form>
-        </div>
-        <div class="form-step" id="step2">
-            <h2>Step 2: Select Service and Date</h2>
-            <form id="service-date-form">
-                <label for="service">Select a service:</label>
-                <select id="service" name="service" required>
-                    <option value="">-- Select a service --</option>
-                    <option value="Haircut">Haircut</option>
-                    <option value="Coloring">Coloring</option>
-                    <option value="Styling">Styling</option>
-                </select>
-                <label for="date">Select a date:</label>
-                <input type="date" id="date" name="date" required>
-                <button type="button" id="step2-continue">Continue</button>
+          </div>
+        
+          <div id="step2" class="step" style="display: none;">
+            <h2>Step 2: Service Requested</h2>
+            <form id="step2-form">
+              <label for="service">Service Requested:</label>
+              <input type="text" id="service" required><br><br>
+        
+              <button type="button" onclick="nextStep()">Continue</button>
             </form>
-        </div>
-        <div class="form-step" id="step3">
-            <h2>Step 3: Payment</h2>
-            <form id="payment-form">
-              <h3>Payment Details</h3>
-              <label for="card-number">Card Number:</label>
-              <input type="text" id="card-number" name="card-number" required>
-              <label for="expiration">Expiration Date:</label>
-              <input type="text" id="expiration" name="expiration" required>
+          </div>
+        
+          <div id="step3" class="step" style="display: none;">
+            <h2>Step 3: Credit Card Information</h2>
+            <form id="step3-form">
+              <label for="card">Credit Card Number:</label>
+              <input type="text" id="card" required><br><br>
+        
+              <label for="expiry">Expiry Date:</label>
+              <input type="text" id="expiry" required><br><br>
+        
               <label for="cvv">CVV:</label>
-              <input type="text" id="cvv" name="cvv" required>
-              <button type="button" id="step3-continue">Continue</button>
+              <input type="text" id="cvv" required><br><br>
+        
+              <button type="button" onclick="confirmBooking()">Confirm</button>
             </form>
-        </div>
-        <div id="confirmation-message" class="confirmation">
-          <h2>Booking Confirmation</h2>
-          <p>Your appointment has been successfully booked. We look forward to seeing you!</p>
-          <button id="book-again" onclick="perviouStep()">Book Again</button>
-      </div>
-        <div class="step-indicator">
-            <ul>
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
+          </div>
+        
+          <div id="confirmation" class="step" style="display: none;">
+            <h2>Confirmation</h2>
+            <p id="confirmation-message"></p>
+            <button onclick="location.reload()">Back to Home</button>
+          </div>
     </div>
-    <div id="contact-page" class="contact-page">
+
+    <div id="contact" class="page-container">
       <div class="contact-container">
-          <div class="contact-column">
-              <div class="social-links">
-                  <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img src="assets/twitter.png" alt="Twitter"></a>
-                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="assets/facebook.png" alt="Facebook"></a>
-                  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="assets/instagram.png" alt="Instagram"></a>
-              </div>
+        <div class="contact-column">
+          <div class="social-links">
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img src="assets/twitter.png" alt="Twitter"></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="assets/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="assets/instagram.png" alt="Instagram"></a>
           </div>
-          <div class="contact-column">
-              <table>
-                  <tr>
-                      <th>Phone:</th>
-                      <td>416-400-0000</td>
-                  </tr>
-                  <tr>
-                      <th>Email:</th>
-                      <td><a href="mailto:avouta@example.com">avouta@example.com</a></td>
-                  </tr>
-                  <tr>
-                      <th>Address:</th>
-                      <td><a href="https://www.google.com/maps/search/?api=1&query=Toronto%2C+ON%2C+A1A1A1" target="_blank">Toronto, ON, A1A1A1</a></td>
-                  </tr>
-              </table>
-          </div>
+        </div>
+        <div class="contact-column">
+          <table>
+            <tr>
+              <th>Phone:</th>
+              <td>416-400-0000</td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td><a href="mailto:avouta@example.com">avouta@example.com</a></td>
+            </tr>
+            <tr>
+              <th>Address:</th>
+              <td><a href="https://www.google.com/maps/search/?api=1&query=Toronto%2C+ON%2C+A1A1A1" target="_blank">Toronto, ON, A1A1A1</a></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
-  
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const pages = document.querySelectorAll('.page-container');
+  pages.forEach(page => {
+    if (!page.classList.contains('active')) {
+      page.style.display = 'none';
+    }
+  });
+
+  const headerLinks = document.querySelectorAll('.header-menu .nav-link');
+  headerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+
+      pages.forEach(page => {
+        page.style.display = 'none';
+      });
+
+      headerLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      const targetId = link.getAttribute('href').substring(1);
+      const targetPage = document.getElementById(targetId);
+      targetPage.style.display = 'block';
+      link.classList.add('active');
+    });
+  });
+
+  const subMenuLinks = document.querySelectorAll('.sub-menu-link');
+  subMenuLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const servicePages = document.querySelectorAll('.service-page');
+      servicePages.forEach(page => {
+        page.style.display = 'none';
+      });
+
+      subMenuLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      const targetId = link.getAttribute('href').substring(1);
+      const targetPage = document.getElementById(targetId);
+      targetPage.style.display = 'block';
+      link.classList.add('active');
+    });
+  });
+});
+
+
+let currentStep = 1;
+
+    function nextStep() {
+      if (currentStep === 1) {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'block';
+        currentStep = 2;
+      } else if (currentStep === 2) {
+        const service = document.getElementById('service').value;
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step3').style.display = 'block';
+        currentStep = 3;
+      }
+    }
+
+    function confirmBooking() {
+      const card = document.getElementById('card').value;
+      const expiry = document.getElementById('expiry').value;
+      const cvv = document.getElementById('cvv').value;
+      document.getElementById('step3').style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+      document.getElementById('confirmation-message').innerText = 'Your appointment has been booked.';
+
+      currentStep = 4;
+    }
+  </script>
 </body>
+
 </html>
-
-
